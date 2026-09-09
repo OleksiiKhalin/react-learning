@@ -1,5 +1,7 @@
 export default function Result() {
     return(
-        <div></div>
+        <div id='result'>
+            Here will be result
+        </div>
     );
 }
