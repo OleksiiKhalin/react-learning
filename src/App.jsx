@@ -5,11 +5,12 @@ import UserInput from './components/UserInput'
 
 function App() {
   const [ userInputs, setUserInputs ] = useState({
-    initialInvestment:  0,
-    annualInvestment:   0,
-    expectedReturn:   0,
-    duration: 0,
+    initialInvestment: 100,
+    annualInvestment:  10,
+    expectedReturn:    10,
+    duration:          10,
   });
+  const validInput = userInputs.duration > 0
   function handleUserInput(event) {
       const name = event.target.name;
       const value = Number(event.target.value);
@@ -22,7 +23,7 @@ function App() {
     <main>
       <Header />
       <UserInput userInputs={userInputs} onChange={handleUserInput}/>
-      <Result userInputs={userInputs}/>
+      {validInput && <Result userInputs={userInputs}/> || <p>Duration cannot be negative</p>}
     </main>
   );
 }

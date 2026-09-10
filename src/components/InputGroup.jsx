@@ -1,9 +1,6 @@
-import { useState } from 'react'
 export default function InputGroup({children, name, userInputs, onChange}) {
-    
-
     return(
-        <div >
+        <p>
             <label htmlFor={name}>{children}</label>
             <input
                 id={name}
@@ -14,7 +11,7 @@ export default function InputGroup({children, name, userInputs, onChange}) {
                 value={userInputs[name]}
                 onChange={onChange}
             />
-        </div>
+        </p>
         
     );
 }
