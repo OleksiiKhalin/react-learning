@@ -1,7 +1,13 @@
-export default function Result() {
+import ResultHeadRow from './ResultHeadRow'
+import ResultBodyRow from './ResultBodyRow'
+import { calculateInvestmentResults } from "../util/investment";
+
+export default function Result({ userInputs }) {
+    const calculatedResults = calculateInvestmentResults(userInputs)
     return(
-        <div id='result'>
-            Here will be result
-        </div>
+        <table id="result">
+            <ResultHeadRow />
+            <ResultBodyRow data={calculatedResults}/>
+        </table>
     );
 }

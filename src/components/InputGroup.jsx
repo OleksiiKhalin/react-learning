@@ -3,13 +3,10 @@ export default function InputGroup({children, name, userInputs, onChange}) {
     
 
     return(
-        <div className='input-group'>
-            <label>
-                {children}
-            </label>
-
+        <div >
+            <label htmlFor={name}>{children}</label>
             <input
-                id='user-input'
+                id={name}
                 placeholder='input number'
                 type='number'
                 required
